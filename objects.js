@@ -1,5 +1,13 @@
-const playlist = { artistName: 'songTitles'};
+var playlist = { artistName: 'songTitles'};
 
-function updatePlaylist(playlist, artist, sontTitle) {
-  playlist = Object.assign({}, playlist, {artist});
+Object.assign({}, playlist);
+
+
+function updatePlaylist(obj, artistName, songTitle) {
+  return Object.assign({}, obj, {artistName: artistName}, {sontTitle: songTitle});
+}
+
+function removeFromPlaylist(obj, artistName) {
+  delete obj.artistName;
+  return obj;
 }
